@@ -54,7 +54,7 @@ class CartPole(CartPoleEnv):
         )
         # reward = -1e4 if terminated else -1000*theta**2 - self.xp*max(0, abs(x)-0.25)
         reward = 0 if terminated else 1
-        cost = 10*theta**2 + x**2
+        cost = 10*theta**2 # + x**2 # 约束函数
         truncated = False if self.time_step<self.max_steps else True
         if self.render_mode == "human":
             self.render()
